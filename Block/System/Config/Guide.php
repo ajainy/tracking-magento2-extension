@@ -1,10 +1,10 @@
 <?php
 /**
- * Copyright © 2016 MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
+ * Copyright © 2016 JFrameworks LLC. All rights reserved.
+ * See COPYING.txt for license details.
  */
 
-namespace jframeworks\shippingtracking\Block\System\Config;
+namespace Jframeworks\Shippingtracking\Block\System\Config;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
@@ -15,7 +15,7 @@ class Guide extends Field
     /**
      * @var string
      */
-    protected $_template = 'jframeworks_shippingtracking::system/config/guide.phtml';
+    protected $_template = 'Jframeworks_Shippingtracking::system/config/guide.phtml';
 
     /**
      * @param Context $context

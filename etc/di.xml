@@ -1,20 +1,18 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2016 Envision Ecommerce. All rights reserved.
+ * Copyright © 2016 JFrameworks LLC. All rights reserved.
+ * See COPYING.txt for license details.
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-	<preference for="Magento\Sales\Block\Order\View" type="jframeworks\shippingtracking\Block\Order\View" /> 
-	<preference for="Magento\Shipping\Model\Info" type="jframeworks\shippingtracking\Model\Info"/> 	
-	 <preference for ="Magento\Shipping\Controller\Adminhtml\Order\Shipment\AddTrack" type="jframeworks\shippingtracking\Controller\Adminhtml\Order\Shipment\CustomTrack"/>
-	<preference for ="Magento\Shipping\Controller\Adminhtml\Order\Shipment\RemoveTrack" type="jframeworks\shippingtracking\Controller\Adminhtml\Order\Shipment\RemoveTrack"/> 
-	
-	<preference for="Magento\Shipping\Block\Adminhtml\Order\Tracking" type="jframeworks\shippingtracking\Block\Adminhtml\Order\Tracking" /> 
-	<preference for="Magento\Shipping\Block\Adminhtml\Order\Tracking\View" type="jframeworks\shippingtracking\Block\Adminhtml\Order\Tracking\View" />
-	<!-- <preference for="Magento\Shipping\Block\Adminhtml\Order\Tracking\Invoice" type="jframeworks\shippingtracking\Block\Adminhtml\Order\Tracking\Invoice" />  --> 	
-	
-	
-	
-	
+    <type name="Magento\Shipping\Model\Order\Track">
+        <plugin name="Jframeworks_Shippingtracking_Shipping_Model_Order_Track" type="Jframeworks\Shippingtracking\Plugin\Shipping\Model\Order\TrackPlugin" sortOrder="1" disabled="false"/>
+    </type>
+    <preference for="Magento\Shipping\Block\Adminhtml\Order\Tracking" type="Jframeworks\Shippingtracking\Block\Adminhtml\Order\Tracking" />
+    <type name="Magento\Shipping\Block\Adminhtml\Order\Tracking">
+        <plugin name="Jframeworks_Shippingtracking_Shipping_Block_Adminhtml_Order_Tracking" type="Jframeworks\Shippingtracking\Plugin\Shipping\Block\Adminhtml\Order\TrackingPlugin" sortOrder="1" disabled="false"/>
+    </type>
+    <preference for="Magento\Shipping\Block\Adminhtml\Order\Tracking\View" type="Jframeworks\Shippingtracking\Block\Adminhtml\Order\Tracking\View" />
+    <!-- <preference for="Magento\Shipping\Block\Adminhtml\Order\Tracking\Invoice" type="Jframeworks\Shippingtracking\Block\Adminhtml\Order\Tracking\Invoice" />  -->
 </config>
